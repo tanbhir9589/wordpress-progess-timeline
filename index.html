@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Lead Generation Timeline</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="progress-line">
+                <div class="progress-indicator"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="year"><p>2020</p></div>
+                <div class="content">
+                    <p>We encountered a major challenge with our emails landing in spam folders. After successfully resolving the issue, we transformed that experience into Folderly — an AI-driven email solution platform designed to optimize inbox placement.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2021</div>
+                <div class="content">
+                    <p>As Prospect Engine expanded, the need for scalable solutions became evident. We began investing in automation, significantly boosting our operational efficiency. This led to the creation of Research AI, an internal sales platform designed to convert prospects into customers.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2022</div>
+                <div class="content">
+                    <p>Our team grew as demand for our services increased, adding specialists in market research, sales development, and digital marketing, further enhancing our end-to-end lead generation solutions.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2023</div>
+                <div class="content">
+                    <p>Recognized as a trusted partner for B2B sales development, Prospect Engine continued to help businesses achieve and exceed their sales targets through innovative omnichannel outreach strategies.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2024</div>
+                <div class="content">
+                    <p>We expanded our digital infrastructure, integrating advanced analytics and automation tools to further streamline our lead generation process and deliver even greater value to our clients.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2025</div>
+                <div class="content">
+                    <h2>B2B Lead Generation</h2>
+                    <button class="cta-button">Let's get acquainted</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="scrollToTop" class="scroll-top-btn" title="Go to top">↑</button>
+    <script>
+        // Timeline scroll animations
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const years = document.querySelectorAll('.year');
+
+        function checkScroll() {
+            timelineItems.forEach((item, index) => {
+                const itemTop = item.offsetTop;
+                const itemHeight = item.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scroll = window.scrollY;
+                
+                // Activate items when they're 60% visible
+                if (scroll > (itemTop - windowHeight + itemHeight * 0.6)) {
+                    item.classList.add('active');
+                    years[index].classList.add('active');
+                    
+                    // Highlight current section
+                    highlightCurrentSection(index);
+                } else {
+                    item.classList.remove('active');
+                    years[index].classList.remove('active');
+                }
+            });
+        }
+        
+        // Function to highlight current section
+        function highlightCurrentSection(currentIndex) {
+            timelineItems.forEach((item, index) => {
+                if (index === currentIndex) {
+                    item.classList.add('current');
+                    years[index].classList.add('current');
+                } else {
+                    item.classList.remove('current');
+                    years[index].classList.remove('current');
+                }
+            });
+        }
+
+        // Initial check and scroll event
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Progress line animation
+        const progressIndicator = document.querySelector('.progress-indicator');
+        
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            
+            const progress = (scrolled / documentHeight) * 100;
+            progressIndicator.style.height = `${progress}%`;
+        });
+
+        // Your existing scroll-to-top code
+        const scrollBtn = document.getElementById('scrollToTop');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll to top when button is clicked
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

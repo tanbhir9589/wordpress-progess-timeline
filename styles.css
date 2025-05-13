@@ -1,0 +1,426 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-line {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    bottom: 0px;
+    width: 5px;
+    background: #D8D8D8;
+    height: 720px;
+}
+
+.progress-indicator {
+    position: absolute;
+    width: 100%;
+    background: #2E3F3A;
+    top: 0;
+    height: 0;
+    transition: height 0.1s;
+}
+
+.timeline-item {
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 120px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.year  {
+    position: absolute;
+    left: 0;
+    background: #2f4f4f !important;
+    color: #00ffff !important;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.year.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.year.current {
+    background: #00ffff !important;
+    color: #000000 !important;
+    transform: translateX(0) scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    z-index: 10;
+}
+
+.content {
+    background: rgba(47, 79, 79, 0.3) !important;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    border-left: 2px solid rgba(0, 255, 255, 0.1);
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center ;
+}
+
+.content.current {
+    background: rgba(47, 79, 79, 0.6) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+    border-left: 3px solid #00ffff;
+}
+
+.content h2 {
+    font-size: 1.5em;
+    
+}
+
+.content p {
+    color: #e0e0e0;
+}
+
+.cta-button {
+    background-color: #00ffff !important;
+    color: #000000 !important;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3e6c6c !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 1024px) {
+    .timeline-container {
+        max-width: 98vw;
+        padding: 10px;
+    }
+    .content {
+        max-width: 95vw;
+    }
+    .progress-line {
+        height: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        padding-left: 80px;
+    }
+    .year {
+        width: 60px;
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+    .content {
+        padding: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 95vw;
+        align-items: center;
+    }
+    .content h2 {
+        font-size: 1.2em;
+    }
+    .cta-button {
+        font-size: 0.95em;
+        /* margin-top: 10px; */
+        padding: 12px 24px;
+    }
+    .progress-line {
+        left: 30px;
+        top: 20px;
+        bottom: 0px;
+        height: 720px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-container {
+        padding: 5px;
+    }
+    .timeline {
+        padding: 10px 0;
+    }
+    .timeline-item {
+        padding-left: 55px;
+        margin-bottom: 25px;
+    }
+    .year {
+        width: 45px;
+        padding: 6px 5px;
+        font-size: 0.75em;
+    }
+    .content {
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 0.95em;
+        max-width: 98vw;
+        align-items: center;
+    }
+    .content h2 {
+        font-size: 1em;
+        margin-bottom: 10px;
+
+    }
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 0;
+    }
+    .progress-line {
+        left: 20px;
+        width: 3px;
+        height: 880px;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+    .timeline-container {
+        max-width: 98vw;
+        padding: 10px;
+    }
+    .content {
+        max-width: 95vw;
+    }
+    .progress-line {
+        height: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        padding-left: 80px;
+    }
+    .year {
+        width: 60px;
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+    .content {
+        padding: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 95vw;
+        align-items: center;
+    }
+    .content h2 {
+        font-size: 1.2em;
+    }
+    .cta-button {
+        font-size: 0.95em;
+        /* margin-top: 10px; */
+        padding: 12px 24px;
+    }
+    .progress-line {
+        left: 30px;
+        top: 20px;
+        bottom: 0px;
+        height: 720px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-container {
+        padding: 5px;
+    }
+    .timeline {
+        padding: 10px 0;
+    }
+    .timeline-item {
+        padding-left: 55px;
+        margin-bottom: 25px;
+    }
+    .year {
+        width: 45px;
+        padding: 6px 5px;
+        font-size: 0.75em;
+    }
+    .content {
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 0.95em;
+        max-width: 98vw;
+        align-items: center;
+    }
+    .content h2 {
+        font-size: 1em;
+        margin-bottom: 10px;
+
+    }
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 0;
+    }
+    .progress-line {
+        left: 20px;
+        width: 3px;
+        height: 880px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
