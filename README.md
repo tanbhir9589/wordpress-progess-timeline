@@ -7,17 +7,8 @@ This project is a dynamic timeline designed for WordPress, showcasing the progre
 - Responsive Design : Ensures compatibility across various devices and screen sizes.
 - Call-to-Action : A button to engage users and prompt further interaction.
 
-## Usage
-- Open index.html in a browser to view the timeline.
-- Customize the timeline by editing the HTML and CSS files to fit your specific needs.
 ## Technologies Used
 - HTML
 - CSS
 - JavaScript
-## Contributing
-Feel free to fork the repository and submit pull requests. Contributions are welcome!
 
-## License
-This project is licensed under the MIT License.
-
-You can create the file using a text editor or command line tool, and paste the content above into it.
